@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Palette derived SOLELY from the Tazza Produce logo (light) — verbatim from site/css/styles.css */
+  --bg: #F1F5E9;
+  --surface: #E9F0DB;
+  --surface2: #DCE8C8;
+  --text: #1C2A18;
+  --text-soft: #46553B;
+  --on-brand: #F8F8F8;
+  --line: #C9D8B4;
+  --green-700: #386838;
+  --green-900: #1F3D1F;
+  --green-500: #389858;
+  --green-300: #A8C848;
+  --gold: #E8B838;
+  --gold-deep: #C99A1F;
+  --accent: #A8C848; /* light green accent (logo grid lines) */
+  --cream: #F8F8F8;  /* cream/off-white text on green */
+  --deep: #1F3D1F;
+}
+
+[data-theme="dark"] {
+  /* Dark overrides — verbatim from site/css/styles.css [data-theme="dark"] */
+  --bg: #15241A;
+  --surface: #1E3326;
+  --surface2: #16271C;
+  --text: #EEF3E6;
+  --text-soft: #A9D8A0;
+  --on-brand: #F4F1E6;
+  --line: #2E4636;
+  --green-700: #6FBE84;
+  --green-900: #EEF3E6;
+  --green-500: #7FD894;
+  --green-300: #A9D8A0;
+  --gold: #F2C44B;
+  --gold-deep: #E0B23C;
+  --accent: #A9D8A0;
+  --cream: #F4F1E6;
+  --deep: #0E1A12;
+}
+
+@layer base {
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Hanken Grotesk", system-ui, Verdana, sans-serif;
+    line-height: 1.65;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color .3s ease, color .3s ease;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--green-700);
+    color: var(--on-brand);
+    padding: .6em 1em;
+    z-index: 200;
+  }
+
+  .skip-link:focus {
+    left: 1em;
+    top: 1em;
+  }
+}
