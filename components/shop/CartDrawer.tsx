@@ -1,26 +1,27 @@
 'use client';
 
+import { useState } from 'react';
 import { useT } from '@/components/LocaleProvider';
 import { useCart } from './CartContext';
 import { priceOf } from './products';
+import { Checkout } from './Checkout';
 
 export function CartDrawer({
   open,
   onClose,
-  onCheckout,
 }: {
   open: boolean;
   onClose: () => void;
-  onCheckout: () => void;
 }) {
   const t = useT();
   const { items, removeItem, total, count } = useCart();
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
 
   if (!open) return null;
 
   return (
     <div
-      className="fixed inset-0 z-[60] flex justify-end bg-deep/40"
+      className="fixed inset-0 z-[60] flex justify-end bg-black/40"
       role="dialog"
       aria-modal="true"
       aria-label={t('cart.title')}
@@ -43,7 +44,9 @@ export function CartDrawer({
         </div>
 
         <div className="flex-1 overflow-y-auto p-4">
-          {count === 0 ? (
+          {checkoutOpen ? (
+            <Checkout onDone={() => { setCheckoutOpen(false); onClose(); }} />
+          ) : count === 0 ? (
             <p className="text-sm text-textSoft">{t('cart.empty')}</p>
           ) : (
             <ul className="flex flex-col gap-3">
@@ -84,7 +87,7 @@ export function CartDrawer({
           <button
             type="button"
             disabled={count === 0}
-            onClick={onCheckout}
+            onClick={() => setCheckoutOpen(true)}
             className="w-full rounded-md bg-green700 px-4 py-3 text-sm font-semibold text-onBrand transition-colors hover:bg-green500 disabled:opacity-50"
           >
             {t('cart.checkout')}

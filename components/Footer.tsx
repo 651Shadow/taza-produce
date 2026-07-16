@@ -36,7 +36,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/story" className="opacity-90 hover:text-gold">
+                <Link href="/about" className="opacity-90 hover:text-gold">
                   {t('nav.story')}
                 </Link>
               </li>
@@ -86,7 +86,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="lic mt-8 border-t border-onBrand/20 pt-6 text-sm opacity-80">
+        <p className="lic mt-8 border-t border-white/20 pt-6 text-sm opacity-80">
           {t('foot.lic')}
         </p>
         <p className="foot-bottom mt-3 text-sm opacity-80">{t('foot.rights')}</p>

@@ -5,10 +5,11 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { useLocale } from './LocaleProvider';
 import { useTheme } from './ThemeProvider';
+import CartButton from '@/components/shop/CartButton';
 
 const NAV: { href: string; key: string }[] = [
   { href: '/', key: 'nav.home' },
-  { href: '/story', key: 'nav.story' },
+  { href: '/about', key: 'nav.story' },
   { href: '/shop', key: 'nav.shop' },
   { href: '/hours', key: 'nav.hours' },
   { href: '/gallery', key: 'nav.gallery' },
@@ -87,6 +88,7 @@ export default function Header() {
           >
             {theme === 'dark' ? 'Light' : 'Dark'}
           </button>
+          <CartButton />
           <Link
             href="/shop"
             className="rounded-md bg-green700 px-4 py-2 text-sm font-semibold text-onBrand hover:bg-green500"

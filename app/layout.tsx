@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { LocaleProvider } from '@/components/LocaleProvider';
+import { CartProvider } from '@/components/shop/CartContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -40,9 +41,11 @@ export default function RootLayout({
       <body>
         <ThemeProvider>
           <LocaleProvider>
-            <Header />
-            {children}
-            <Footer />
+            <CartProvider>
+              <Header />
+              {children}
+              <Footer />
+            </CartProvider>
           </LocaleProvider>
         </ThemeProvider>
       </body>

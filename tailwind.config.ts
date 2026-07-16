@@ -18,6 +18,7 @@ const config: Config = {
         line: 'var(--line)',
         green700: 'var(--green-700)',
         green900: 'var(--green-900)',
+        green300: 'var(--green-300)',
         accent: 'var(--accent)',
         gold: 'var(--gold)',
         cream: 'var(--cream)',
