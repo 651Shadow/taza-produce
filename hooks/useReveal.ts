@@ -3,39 +3,39 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * Port of the static site's bidirectional IntersectionObserver reveal.
- * Adds the `in` class when the element intersects (fade/slide up) and
- * removes it when scrolled away (up or down). When the user prefers
- * reduced motion, the element is revealed immediately without observing.
+ * Scroll-reveal hook (bidirectional). Adds the `in` class when the element
+ * enters the viewport and removes it when it leaves, so content fades/slides
+ * both on scroll-down and scroll-up. Honors prefers-reduced-motion by making
+ * the element visible immediately without an observer.
  */
-export function useReveal<T extends HTMLElement = HTMLDivElement>() {
+export function useReveal<T extends HTMLElement = HTMLElement>() {
   const ref = useRef<T | null>(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
-    const reduce =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (reduce || !('IntersectionObserver' in window)) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
       el.classList.add('in');
       return;
     }
 
-    const io = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add('in');
-          else entry.target.classList.remove('in');
-        });
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            el.classList.add('in');
+          } else {
+            el.classList.remove('in');
+          }
+        }
       },
-      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
+      { threshold: 0.1, rootMargin: '0px 0px -10% 0px' },
     );
 
-    io.observe(el);
-    return () => io.disconnect();
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   return ref;
