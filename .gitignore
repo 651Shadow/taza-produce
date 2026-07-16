@@ -24,3 +24,22 @@ ud_*
 Thumbs.db
 .vscode/
 .idea/
+
+# local dev scratch (second brain) — never committed
+.second-brain/
+
+# build / deps
+node_modules/
+.next/
+out/
+
+# env / secrets — never commit real values
+.env
+.env*.local
+.env.local
+
+# static-mockup tooling (not part of the Next app)
+mockup/
+*.ps1
+clean_header.py
+transform.py
