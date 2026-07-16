@@ -43,3 +43,7 @@ mockup/
 *.ps1
 clean_header.py
 transform.py
+
+# TS incremental build info
+tsconfig.tsbuildinfo
+*.tsbuildinfo
