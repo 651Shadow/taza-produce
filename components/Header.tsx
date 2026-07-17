@@ -6,6 +6,8 @@ import { useState } from 'react';
 import { useLocale } from './LocaleProvider';
 import { useTheme } from './ThemeProvider';
 import CartButton from '@/components/shop/CartButton';
+import LanguageToggle from '@/components/LanguageToggle';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const NAV: { href: string; key: string }[] = [
   { href: '/', key: 'nav.home' },
@@ -70,24 +72,8 @@ export default function Header() {
 
         {/* Actions */}
         <div className="ml-auto flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => setLocale(locale === 'ar' ? 'en' : 'ar')}
-            aria-label={t('nav.langSwitch')}
-            title={t('nav.langSwitch')}
-            className="rounded-md border border-line px-3 py-2 text-sm font-medium text-text hover:bg-surface2"
-          >
-            {locale === 'ar' ? 'English' : 'العربية'}
-          </button>
-          <button
-            type="button"
-            onClick={toggle}
-            aria-label={t('theme.toggle')}
-            title={t('theme.toggle')}
-            className="rounded-md border border-line px-3 py-2 text-sm font-medium text-text hover:bg-surface2"
-          >
-            {theme === 'dark' ? 'Light' : 'Dark'}
-          </button>
+          <LanguageToggle />
+          <ThemeToggle />
           <CartButton />
           <Link
             href="/shop"
