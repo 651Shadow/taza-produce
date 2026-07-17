@@ -40,7 +40,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 h-[74px] w-full border-b border-line bg-surface">
-      <div className="mx-auto flex h-full max-w-6xl items-center gap-4 px-5">
+      <div className="mx-auto flex h-full max-w-6xl items-center gap-2 px-3 md:gap-4 md:px-5">
         {/* Brand */}
         <Link href="/" className="flex items-center gap-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -49,8 +49,9 @@ export default function Header() {
             alt="Tazza Produce logo"
             width={46}
             height={46}
+            className="h-9 w-9 sm:h-11 sm:w-11"
           />
-          <span className="flex flex-col leading-tight">
+          <span className="hidden flex-col leading-tight sm:flex">
             <span className="text-lg font-semibold text-text">Tazza Produce</span>
             <span className="text-xs text-green700">EST. 1988</span>
           </span>
