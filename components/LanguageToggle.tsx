@@ -18,7 +18,7 @@ export default function LanguageToggle() {
       onClick={() => setLocale(isAr ? 'en' : 'ar')}
       className="relative inline-flex h-8 w-14 items-stretch overflow-hidden rounded-full border border-line bg-surface2 shadow-sm transition-colors dark:bg-[#223424] dark:shadow-none dark:ring-1 dark:ring-white/10 sm:w-[4.25rem]"
     >
-      {/* Sliding knob — fills one half, centered on the active label */}
+      {/* Sliding knob: fills one half, centered on the active label */}
       <span
         aria-hidden="true"
         className={`pointer-events-none absolute inset-y-1 left-1 w-[calc(50%-4px)] rounded-full bg-green700 transition-transform duration-200 dark:bg-deep ${

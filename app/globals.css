@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  /* Palette derived SOLELY from the Tazza Produce logo (light) — verbatim from site/css/styles.css */
+  /* Palette derived SOLELY from the Tazza Produce logo (light): verbatim from site/css/styles.css */
   --bg: #F1F5E9;
   --surface: #E9F0DB;
   --surface2: #DCE8C8;
@@ -23,7 +23,7 @@
 }
 
 [data-theme="dark"] {
-  /* Dark overrides — verbatim from site/css/styles.css [data-theme="dark"] */
+  /* Dark overrides: verbatim from site/css/styles.css [data-theme="dark"] */
   --bg: #15241A;
   --surface: #1E3326;
   --surface2: #16271C;

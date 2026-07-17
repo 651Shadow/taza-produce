@@ -53,3 +53,7 @@ tsconfig.tsbuildinfo
 *.png.bak
 
 .vercel
+
+# Private project report (build/status/architecture notes) — for the dev only,
+# never deployed to the public site or committed to the shared repo.
+REPORT/

@@ -1,8 +1,8 @@
 import type { MetadataRoute } from 'next';
 import { headers } from 'next/headers';
 
-function base(): string {
-  const h = headers();
+async function base(): Promise<string> {
+  const h = await headers();
   const host = h.get('x-forwarded-host') || h.get('host') || '';
   const proto = h.get('x-forwarded-proto') || 'https';
   return host ? `${proto}://${host}` : '';
@@ -10,8 +10,8 @@ function base(): string {
 
 const ROUTES = ['', '/about', '/shop', '/hours', '/gallery', '/contact', '/legal'];
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const BASE = base();
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const BASE = await base();
   if (!BASE) return [];
   return ROUTES.map((path) => ({
     url: `${BASE}${path}`,
