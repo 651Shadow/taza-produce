@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   icons: { icon: '/taza-logo.png' },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
