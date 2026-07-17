@@ -2,9 +2,8 @@
 
 import { useLocale } from './LocaleProvider';
 
-// Sliding language switch: EN <-> AR. The knob slides toward the active side.
-// In RTL the whole control mirrors via the document direction, so EN stays on
-// the leading edge and AR on the trailing edge automatically.
+// Sliding language switch: EN <-> AR. The green knob sits centered behind the
+// active label's half of the track. In RTL the control mirrors automatically.
 export default function LanguageToggle() {
   const { locale, setLocale, t } = useLocale();
   const isAr = locale === 'ar';
@@ -17,17 +16,29 @@ export default function LanguageToggle() {
       aria-label={t('nav.langSwitch')}
       title={t('nav.langSwitch')}
       onClick={() => setLocale(isAr ? 'en' : 'ar')}
-      className={`relative inline-flex h-8 w-14 items-center justify-between overflow-hidden rounded-full border border-line bg-surface2 shadow-sm transition-colors dark:bg-[#223424] dark:shadow-none dark:ring-1 dark:ring-white/10 sm:w-[4.25rem] sm:px-2`}
+      className="relative inline-flex h-8 w-14 items-stretch overflow-hidden rounded-full border border-line bg-surface2 shadow-sm transition-colors dark:bg-[#223424] dark:shadow-none dark:ring-1 dark:ring-white/10 sm:w-[4.25rem]"
     >
-      <span className={`z-10 ${isAr ? 'text-textSoft' : 'text-text'}`}>EN</span>
-      <span className={`z-10 ${isAr ? 'text-text' : 'text-textSoft'}`}>ع</span>
+      {/* Sliding knob — fills one half, centered on the active label */}
       <span
         aria-hidden="true"
-        className={`pointer-events-none absolute top-1 h-6 w-6 rounded-full bg-green700 transition-transform duration-200 ${
-          isAr ? 'translate-x-[2.0rem]' : 'translate-x-0'
+        className={`pointer-events-none absolute inset-y-1 left-1 w-[calc(50%-4px)] rounded-full bg-green700 transition-transform duration-200 dark:bg-deep ${
+          isAr ? 'translate-x-full' : 'translate-x-0'
         }`}
-        style={{ left: '2px' }}
       />
+      <span
+        className={`relative z-10 flex flex-1 items-center justify-center text-xs font-semibold transition-colors ${
+          isAr ? 'text-textSoft' : 'text-text'
+        }`}
+      >
+        EN
+      </span>
+      <span
+        className={`relative z-10 flex flex-1 items-center justify-center text-base font-semibold transition-colors ${
+          isAr ? 'text-text' : 'text-textSoft'
+        }`}
+      >
+        ع
+      </span>
     </button>
   );
 }

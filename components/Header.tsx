@@ -96,12 +96,36 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMenuOpen((o) => !o)}
-            aria-label={t('menu.open')}
+            aria-label={menuOpen ? t('menu.close') : t('menu.open')}
             aria-expanded={menuOpen}
             aria-controls="primary-nav"
-            className="min-h-[44px] rounded-md border border-line px-3 py-2 text-sm font-medium text-text hover:bg-surface2 md:hidden"
+            className="flex min-h-[44px] items-center rounded-md border border-line p-2 text-text hover:bg-surface2 md:hidden"
           >
-            {t('menu.label')}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              {menuOpen ? (
+                <>
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </>
+              ) : (
+                <>
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </>
+              )}
+            </svg>
           </button>
         </div>
       </div>

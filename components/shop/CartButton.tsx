@@ -16,13 +16,28 @@ export default function CartButton() {
         type="button"
         onClick={() => setOpen(true)}
         aria-label={t('cart.title')}
-        className="relative rounded-md border border-line px-3 py-2 text-sm font-medium text-text hover:bg-surface2"
+        className="relative rounded-md border border-line p-2 text-text transition-colors hover:bg-surface2"
       >
-        <span aria-hidden="true">{t('cart.short')}</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="8" cy="21" r="1" />
+          <circle cx="19" cy="21" r="1" />
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+        </svg>
         {count > 0 && (
           <span
             aria-live="polite"
-            className="absolute -right-2 -top-2 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-gold px-1 text-xs font-bold text-deep"
+            className="absolute -right-1.5 -top-1.5 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-gold px-1 text-xs font-bold text-deep"
           >
             {count}
           </span>
