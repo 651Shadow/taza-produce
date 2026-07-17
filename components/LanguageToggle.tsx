@@ -17,7 +17,7 @@ export default function LanguageToggle() {
       aria-label={t('nav.langSwitch')}
       title={t('nav.langSwitch')}
       onClick={() => setLocale(isAr ? 'en' : 'ar')}
-      className="relative inline-flex h-8 w-[4.25rem] items-center justify-between overflow-hidden rounded-full border border-line bg-surface2 px-2 text-xs font-semibold"
+      className={`relative inline-flex h-8 w-14 items-center justify-between overflow-hidden rounded-full border border-line bg-surface2 px-1.5 text-xs font-semibold sm:w-[4.25rem] sm:px-2`}
     >
       <span className={`z-10 ${isAr ? 'text-textSoft' : 'text-text'}`}>EN</span>
       <span className={`z-10 ${isAr ? 'text-text' : 'text-textSoft'}`}>ع</span>
