@@ -47,3 +47,7 @@ transform.py
 # TS incremental build info
 tsconfig.tsbuildinfo
 *.tsbuildinfo
+
+# playwright MCP scratch
+.playwright-mcp/
+*.png.bak
