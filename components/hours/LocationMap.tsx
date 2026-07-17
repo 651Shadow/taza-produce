@@ -30,16 +30,14 @@ export function LocationMap() {
         </address>
       </div>
 
-      <div
-        role="img"
-        aria-label={`${t('reach.address1')}, ${t('reach.address2')}`}
-        className="flex min-h-[260px] items-center justify-center rounded-2xl border border-line bg-surface2 p-6 text-center"
-      >
-        <div>
-          <p className="font-medium text-text">{t('reach.address1')}</p>
-          <p className="text-textSoft">{t('reach.address2')}</p>
-          <p className="mt-2 text-sm text-textSoft">{t('hours.map')}</p>
-        </div>
+      <div className="overflow-hidden rounded-2xl border border-line bg-surface2">
+        <iframe
+          title={t('reach.address1') + ', ' + t('reach.address2')}
+          src="https://www.google.com/maps?q=302+86th+St,+Brooklyn,+NY+11209&output=embed"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="h-[300px] w-full border-0"
+        />
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ Fresh produce, premium halal meats cut to order, warm pitas baked through the
 night, Middle Eastern pantry staples, dairy, frozen foods, and beverages.
 The online shop (Model A) lets customers build a list and order online for
 pickup; payment is collected in store on pickup. (No online card charge in
-this build; Stripe is wired in test mode and ready for live keys.)
+this build.)
 
 ## Pages / routes
 - `/` — Home: hero, shop-by-category, why-us, visit banner
@@ -66,5 +66,3 @@ this build; Stripe is wired in test mode and ready for live keys.)
 ## Notes / disclaimers
 - This is a design mockup. Legal copy should be reviewed by a
   New-York-licensed attorney before any real launch.
-- Live Stripe payments require a US Stripe account the Egyptian developer
-  cannot open; test-mode keys work from anywhere.
