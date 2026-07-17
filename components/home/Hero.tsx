@@ -21,7 +21,7 @@ export default function Hero() {
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
                 href="/shop"
-                className="rounded-lg bg-green700 px-5 py-3 font-semibold text-onBrand hover:bg-green500"
+                className="rounded-lg bg-green700 dark:bg-deep px-5 py-3 font-semibold text-onBrand hover:bg-green500"
               >
                 {t('hero.actions.shop')}
               </Link>

@@ -134,7 +134,7 @@ export function CartDrawer({
             type="button"
             disabled={count === 0}
             onClick={() => setCheckoutOpen(true)}
-            className="min-h-[44px] w-full rounded-md bg-green700 px-4 py-3 text-sm font-semibold text-onBrand transition-colors hover:bg-green500 disabled:opacity-50"
+            className="min-h-[44px] w-full rounded-md bg-green700 dark:bg-deep px-4 py-3 text-sm font-semibold text-onBrand transition-colors hover:bg-green500 disabled:opacity-50"
           >
             {t('cart.checkout')}
           </button>

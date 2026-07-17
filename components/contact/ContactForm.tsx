@@ -125,7 +125,7 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={busy}
-            className="rounded-md bg-green700 px-4 py-2 text-sm font-semibold text-onBrand hover:bg-green500 disabled:opacity-50"
+            className="rounded-md bg-green700 dark:bg-deep px-4 py-2 text-sm font-semibold text-onBrand hover:bg-green500 disabled:opacity-50"
           >
             {busy ? t('cta.sending') : t('cta.send')}
           </button>

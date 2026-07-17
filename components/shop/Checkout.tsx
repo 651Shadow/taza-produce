@@ -61,7 +61,7 @@ export function Checkout({ onDone }: { onDone: () => void }) {
         <button
           type="button"
           onClick={onDone}
-          className="mt-4 rounded-md bg-green700 px-4 py-2 text-sm font-semibold text-onBrand transition-colors hover:bg-green500"
+          className="mt-4 rounded-md bg-green700 dark:bg-deep px-4 py-2 text-sm font-semibold text-onBrand transition-colors hover:bg-green500"
         >
           {t('checkout.close')}
         </button>
@@ -145,7 +145,7 @@ export function Checkout({ onDone }: { onDone: () => void }) {
       <button
         type="submit"
         disabled={count === 0 || busy}
-        className="mt-2 w-full rounded-md bg-green700 px-4 py-3 text-sm font-semibold text-onBrand transition-colors hover:bg-green500 disabled:opacity-50"
+        className="mt-2 w-full rounded-md bg-green700 dark:bg-deep px-4 py-3 text-sm font-semibold text-onBrand transition-colors hover:bg-green500 disabled:opacity-50"
       >
         {busy ? t('cta.sending') : t('checkout.confirm')}
       </button>

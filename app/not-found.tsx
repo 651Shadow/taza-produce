@@ -16,7 +16,7 @@ export default function NotFound() {
         <p className="mt-3 text-textSoft">{t('notfound.body')}</p>
         <Link
           href="/"
-          className="mt-6 rounded-md bg-green700 px-5 py-3 text-sm font-semibold text-onBrand transition-colors hover:bg-green500"
+          className="mt-6 rounded-md bg-green700 dark:bg-deep px-5 py-3 text-sm font-semibold text-onBrand transition-colors hover:bg-green500"
         >
           {t('notfound.home')}
         </Link>

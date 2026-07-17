@@ -27,7 +27,7 @@ export function ProductCard({ product }: { product: Product }) {
           <button
             type="button"
             onClick={() => addItem(product.id)}
-            className="rounded-md bg-green700 px-4 py-2 text-sm font-semibold text-onBrand transition-colors hover:bg-green500"
+            className="rounded-md bg-green700 dark:bg-deep px-4 py-2 text-sm font-semibold text-onBrand transition-colors hover:bg-green500"
           >
             {t('cta.add')}
           </button>

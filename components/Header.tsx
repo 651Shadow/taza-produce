@@ -89,7 +89,7 @@ export default function Header() {
           <CartButton />
           <Link
             href="/shop"
-            className="hidden rounded-md bg-green700 px-4 py-2 text-sm font-semibold text-onBrand hover:bg-green500 md:inline-block"
+            className="hidden rounded-md bg-green700 dark:bg-deep px-4 py-2 text-sm font-semibold text-onBrand hover:bg-green500 md:inline-block"
           >
             {t('cta.order')}
           </Link>
