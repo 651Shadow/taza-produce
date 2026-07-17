@@ -8,11 +8,11 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://tazzaproduce.example'),
-  title: 'Tazza Produce — Fresh Halal Grocery, Brooklyn',
+  title: 'Tazza Produce: Fresh Halal Grocery, Brooklyn',
   description:
     'Tazza Produce: family-owned Middle Eastern and halal grocery in Bay Ridge, Brooklyn. Fresh produce, halal meats, and warm pitas, open 24 hours.',
   openGraph: {
-    title: 'Tazza Produce — Fresh Halal Grocery, Brooklyn',
+    title: 'Tazza Produce: Fresh Halal Grocery, Brooklyn',
     description:
       'Fresh produce, halal meats, and Middle Eastern groceries. Open 24 hours in Bay Ridge, Brooklyn.',
     url: 'https://tazzaproduce.example',
