@@ -7,7 +7,7 @@ import { OrdersNote } from '@/components/contact/OrdersNote';
 
 export default function ContactPage() {
   return (
-    <main>
+    <main id="main">
       <ContactHero />
       <section className="bg-bg">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-14 md:grid-cols-2">

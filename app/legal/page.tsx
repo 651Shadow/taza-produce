@@ -8,7 +8,7 @@ const SECTIONS = ['terms', 'privacy', 'refund', 'accessibility', 'licenses'] as 
 export default function LegalPage() {
   const t = useT();
   return (
-    <main>
+    <main id="main">
       <section className="bg-surface">
         <div className="mx-auto max-w-3xl px-5 py-14 md:py-20">
           <Reveal>

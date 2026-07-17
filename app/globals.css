@@ -74,13 +74,16 @@
   }
 }
 
-/* Scroll reveal (bidirectional fade/slide-up) + reduced-motion override */
-.reveal {
+/* Scroll reveal (bidirectional fade/slide-up). Progressive enhancement:
+   only hide when JS is active (.js set pre-paint by the theme script), so a
+   no-JS / blocked-script visitor still sees all content. Reduced-motion
+   users get content immediately. */
+.js .reveal {
   opacity: 0;
   transform: translateY(14px);
   transition: opacity .6s ease, transform .6s ease;
 }
-.reveal.in {
+.js .reveal.in {
   opacity: 1;
   transform: none;
 }

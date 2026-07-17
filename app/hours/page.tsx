@@ -11,7 +11,7 @@ export default function HoursPage() {
   const t = useT();
 
   return (
-    <main className="bg-bg">
+    <main id="main" className="bg-bg">
       {/* Hero */}
       <Reveal as="section" className="mx-auto max-w-5xl px-5 pt-[calc(74px+3rem)] pb-10 text-center">
         <p className="text-sm font-semibold uppercase tracking-wide text-green700 dark:text-green700">

@@ -9,7 +9,7 @@ export default function GalleryPage() {
   const t = useT();
 
   return (
-    <main className="mx-auto max-w-6xl px-5 py-12">
+    <main id="main" className="mx-auto max-w-6xl px-5 py-12">
       <Reveal className="max-w-2xl">
         <p className="text-sm font-semibold uppercase tracking-wide text-green700">
           {t('gallery.eyebrow')}

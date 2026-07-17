@@ -248,6 +248,9 @@
   "legal.accessibility.body": "We aim to meet WCAG 2.2 AA. The site supports keyboard navigation, visible focus states, sufficient color contrast, and respects reduced-motion preferences. The store is accessible at street level. Feedback on accessibility is welcome at hello@tazzaproduce.example.",
   "legal.licenses.title": "Licenses & Certifications",
   "legal.licenses.body": "Tazza Produce is licensed by the NYC Department of Health and Mental Hygiene. Halal products are sourced from named certifiers; supplier certificates are kept on file and available on request.",
+  "notfound.title": "Page not found",
+  "notfound.body": "The page you were looking for doesn't exist or has moved.",
+  "notfound.home": "Back to home",
 
   "foot.explore": "Explore",
   "foot.legal": "Legal",

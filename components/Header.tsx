@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocale } from './LocaleProvider';
 import { useTheme } from './ThemeProvider';
 import CartButton from '@/components/shop/CartButton';
@@ -24,6 +24,16 @@ export default function Header() {
   const { locale, setLocale, t } = useLocale();
   const { theme, toggle } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Close the mobile menu on Escape.
+  useEffect(() => {
+    if (!menuOpen) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') setMenuOpen(false);
+    }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [menuOpen]);
 
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href);
@@ -49,6 +59,7 @@ export default function Header() {
         {/* Primary nav */}
         <nav
           aria-label="Primary"
+          id="primary-nav"
           className={`${
             menuOpen ? 'flex' : 'hidden'
           } absolute left-0 right-0 top-[74px] flex-col gap-1 border-b border-line bg-surface px-5 py-3 md:static md:flex md:flex-row md:items-center md:gap-1 md:border-0 md:bg-transparent md:px-0 md:py-0`}
@@ -77,7 +88,7 @@ export default function Header() {
           <CartButton />
           <Link
             href="/shop"
-            className="rounded-md bg-green700 px-4 py-2 text-sm font-semibold text-onBrand hover:bg-green500"
+            className="hidden rounded-md bg-green700 px-4 py-2 text-sm font-semibold text-onBrand hover:bg-green500 md:inline-block"
           >
             {t('cta.order')}
           </Link>
@@ -86,7 +97,8 @@ export default function Header() {
             onClick={() => setMenuOpen((o) => !o)}
             aria-label={t('menu.open')}
             aria-expanded={menuOpen}
-            className="rounded-md border border-line px-3 py-2 text-sm font-medium text-text hover:bg-surface2 md:hidden"
+            aria-controls="primary-nav"
+            className="min-h-[44px] rounded-md border border-line px-3 py-2 text-sm font-medium text-text hover:bg-surface2 md:hidden"
           >
             {t('menu.label')}
           </button>

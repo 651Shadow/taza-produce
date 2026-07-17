@@ -20,7 +20,10 @@ export default function CartButton() {
       >
         <span aria-hidden="true">{t('cart.short')}</span>
         {count > 0 && (
-          <span className="absolute -right-2 -top-2 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-gold px-1 text-xs font-bold text-deep">
+          <span
+            aria-live="polite"
+            className="absolute -right-2 -top-2 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-gold px-1 text-xs font-bold text-deep"
+          >
             {count}
           </span>
         )}
