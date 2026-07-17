@@ -8,10 +8,12 @@ export function VisitBand() {
   return (
     <Link
       href="/hours"
-      className="block rounded-md bg-deep px-6 py-10 text-center text-onBrand transition-colors hover:bg-green900"
+      className="group block rounded-md bg-deep px-6 py-10 text-center text-onBrand transition hover:brightness-110"
     >
       <p className="text-lg font-semibold">{t('gallery.visit')}</p>
-      <span className="mt-2 inline-block text-sm underline">{t('cta.hours')}</span>
+      <span className="mt-2 inline-block text-sm underline transition group-hover:text-gold">
+        {t('cta.hours')}
+      </span>
     </Link>
   );
 }
