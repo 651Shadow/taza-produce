@@ -1,10 +1,24 @@
 import type { Metadata } from 'next';
+import { Hanken_Grotesk, Fraunces } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { LocaleProvider } from '@/components/LocaleProvider';
 import { CartProvider } from '@/components/shop/CartContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
+const body = Hanken_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+});
+
+const display = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+  weight: ['400', '600', '700'],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://tazzaproduce.example'),
@@ -29,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${body.variable} ${display.variable}`}>
       <head>
         {/* Anti-flash: set theme + js flag before paint (enables reveal enhancement only when JS runs) */}
         <script
@@ -38,7 +52,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>
+      <body className="font-sans">
         <a href="#main" className="skip-link">Skip to content</a>
         <ThemeProvider>
           <LocaleProvider>

@@ -86,10 +86,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="lic mt-8 border-t border-white/20 pt-6 text-sm opacity-80">
+        <p className="mt-8 border-t border-onBrand/20 pt-6 text-sm opacity-80">
           {t('foot.lic')}
         </p>
-        <p className="foot-bottom mt-3 text-sm opacity-80">{t('foot.rights')}</p>
+        <p className="mt-3 text-sm opacity-80">{t('foot.rights')}</p>
       </div>
     </footer>
   );
