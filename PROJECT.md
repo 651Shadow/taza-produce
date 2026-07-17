@@ -3,9 +3,10 @@
 Logo-themed multi-page grocery site for Tazza Produce (Brooklyn NY). Ported from the v3 static mockup.
 
 ## Status
-- **Build complete and verified** (`npm run build` exit 0; `next dev` all routes 200).
-- Order model: **A — browse online, pay on pickup** (Stripe test-mode-ready; no live charge).
-- GitHub: local only. Push deferred until `gh` auth is fixed.
+- **Delivery ready and PUSHED** to https://github.com/651Shadow/taza-produce (public, `main`, 17 commits).
+- `npm run build` exit 0 (12 routes). Production server: all pages 200, security headers present, `llm.md` public.
+- Audited (UI/UX/security) + hardened. Not yet a live deployment (needs a host + US Stripe for live payments).
+
 
 ## Stack
 - Next.js 14 App Router, React 18, TypeScript, Tailwind v3.
