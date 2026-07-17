@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useT } from '@/components/LocaleProvider';
 import { useCart } from './CartContext';
 import { priceOf } from './products';
@@ -17,6 +17,50 @@ export function CartDrawer({
   const { items, removeItem, total, count } = useCart();
   const [checkoutOpen, setCheckoutOpen] = useState(false);
 
+  const panelRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const lastFocused = useRef<HTMLElement | null>(null);
+
+  // Keyboard + focus management (WAI-ARIA dialog pattern).
+  useEffect(() => {
+    if (!open) return;
+
+    lastFocused.current = document.activeElement as HTMLElement | null;
+    // Move focus into the dialog (close button is always present).
+    closeRef.current?.focus();
+
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        onClose();
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      const panel = panelRef.current;
+      if (!panel) return;
+      const focusables = panel.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      // Restore focus to the trigger on close.
+      lastFocused.current?.focus();
+    };
+  }, [open, onClose]);
+
   if (!open) return null;
 
   return (
@@ -28,16 +72,18 @@ export function CartDrawer({
       onClick={onClose}
     >
       <aside
+        ref={panelRef}
         className="flex h-full w-full max-w-md flex-col bg-surface shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b border-line p-4">
           <h2 className="text-lg font-semibold text-text">{t('cart.title')}</h2>
           <button
+            ref={closeRef}
             type="button"
             onClick={onClose}
             aria-label={t('cart.close')}
-            className="rounded-md border border-line px-3 py-1 text-sm text-text hover:bg-surface2"
+            className="min-h-[44px] rounded-md border border-line px-3 py-1 text-sm text-text hover:bg-surface2"
           >
             {t('cart.close')}
           </button>
@@ -67,7 +113,7 @@ export function CartDrawer({
                       <button
                         type="button"
                         onClick={() => removeItem(item.id)}
-                        className="rounded-md border border-line px-2 py-1 text-xs text-text hover:bg-surface2"
+                        className="min-h-[44px] rounded-md border border-line px-2 py-1 text-xs text-text hover:bg-surface2"
                       >
                         {t('cart.remove')}
                       </button>
@@ -88,7 +134,7 @@ export function CartDrawer({
             type="button"
             disabled={count === 0}
             onClick={() => setCheckoutOpen(true)}
-            className="w-full rounded-md bg-green700 px-4 py-3 text-sm font-semibold text-onBrand transition-colors hover:bg-green500 disabled:opacity-50"
+            className="min-h-[44px] w-full rounded-md bg-green700 px-4 py-3 text-sm font-semibold text-onBrand transition-colors hover:bg-green500 disabled:opacity-50"
           >
             {t('cart.checkout')}
           </button>

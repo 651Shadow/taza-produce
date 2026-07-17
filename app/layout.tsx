@@ -31,14 +31,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Anti-flash: set theme before paint */}
+        {/* Anti-flash: set theme + js flag before paint (enables reveal enhancement only when JS runs) */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `document.documentElement.dataset.theme = localStorage.getItem('taza-theme') || 'light';`,
+            __html: `var d=document.documentElement;d.dataset.theme=localStorage.getItem('taza-theme')||'light';d.classList.add('js');`,
           }}
         />
       </head>
       <body>
+        <a href="#main" className="skip-link">Skip to content</a>
         <ThemeProvider>
           <LocaleProvider>
             <CartProvider>

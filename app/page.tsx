@@ -8,7 +8,7 @@ import VisitBanner from '@/components/home/VisitBanner';
 
 export default function Page() {
   return (
-    <main>
+    <main id="main">
       <Reveal>
         <Hero />
       </Reveal>
