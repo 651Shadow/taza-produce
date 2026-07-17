@@ -24,6 +24,10 @@ const config: Config = {
         cream: 'var(--cream)',
         deep: 'var(--deep)',
       },
+      fontFamily: {
+        sans: ['var(--font-body)', 'system-ui', 'Verdana', 'sans-serif'],
+        serif: ['var(--font-display)', 'Georgia', 'serif'],
+      },
     },
   },
   plugins: [],

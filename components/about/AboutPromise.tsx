@@ -19,13 +19,13 @@ export function AboutPromise() {
   ];
 
   return (
-    <Reveal as="section" className="border-y border-line bg-surface2 py-[76px] text-text">
+    <Reveal as="section" className="border-y border-line bg-surface2 py-20 text-text">
       <div className="mx-auto max-w-[1180px] px-5">
         <div className="mb-9 max-w-[62ch]">
           <p className="text-[0.78rem] font-bold uppercase tracking-[0.1em] text-green900">
             {t('about.promise.kicker')}
           </p>
-          <h2 className="mt-2 font-[Fraunces,Georgia,serif] text-[clamp(1.7rem,3.6vw,2.5rem)] font-bold leading-[1.12] text-green900">
+          <h2 className="mt-2 font-serif text-[clamp(1.7rem,3.6vw,2.5rem)] font-bold leading-[1.12] text-green900">
             {t('about.promise')}
           </h2>
         </div>
@@ -38,7 +38,7 @@ export function AboutPromise() {
               <span className="mb-2 inline-block text-[0.72rem] font-bold uppercase tracking-[0.06em] text-green900">
                 {t(card.tag)}
               </span>
-              <h3 className="mb-2 font-[Fraunces,Georgia,serif] text-[1.25rem] font-bold text-green900">
+              <h3 className="mb-2 font-serif text-[1.25rem] font-bold text-green900">
                 {t(card.title)}
               </h3>
               <p className="max-w-[60ch] text-textSoft">{t(card.body)}</p>

@@ -17,7 +17,7 @@ export default function VisitBanner() {
           </div>
           <Link
             href="/hours"
-            className="shrink-0 rounded-lg bg-gold px-5 py-3 font-semibold text-deep hover:bg-gold-deep"
+            className="shrink-0 rounded-lg bg-gold px-5 py-3 font-semibold text-deep hover:bg-[#c99a1f]"
           >
             {t('cta.hours')}
           </Link>

@@ -46,7 +46,7 @@
   body {
     background-color: var(--bg);
     color: var(--text);
-    font-family: "Hanken Grotesk", system-ui, Verdana, sans-serif;
+    font-family: var(--font-body), "Hanken Grotesk", system-ui, Verdana, sans-serif;
     line-height: 1.65;
     font-size: 17px;
     -webkit-font-smoothing: antialiased;
@@ -98,4 +98,15 @@
 /* Anchor offset under the fixed 74px header */
 .scroll-mt-header {
   scroll-margin-top: 90px;
+}
+
+/* Reusable ghost/secondary button (on-palette gold outline) */
+.btn-ghost {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  transition: background-color .2s ease, color .2s ease;
+}
+.btn-ghost:hover {
+  background-color: var(--gold);
+  color: var(--deep);
 }
