@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const BASE = 'https://taza-produce-g2qijnw1o-651shadows-projects.vercel.app';
+const BASE = 'https://taza-produce-pqd23vxb2-651shadows-projects.vercel.app';
 
 const ROUTES = ['', '/about', '/shop', '/hours', '/gallery', '/contact', '/legal'];
 
