@@ -36,7 +36,7 @@ export default function Hero() {
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/4997232541420948804.jpg"
+              src="/4997232541420948841.jpg"
               alt={t('hero.title')}
               className="aspect-[4/3] w-full rounded-2xl border-2 border-gold object-cover"
             />
