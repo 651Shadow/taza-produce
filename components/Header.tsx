@@ -85,12 +85,6 @@ export default function Header() {
         <div className="ml-auto flex items-center gap-2">
           <LanguageToggle />
           <ThemeToggle />
-          <Link
-            href="/hours"
-            className="hidden rounded-md bg-green700 dark:bg-[#2f6b43] px-4 py-2 text-sm font-semibold text-onBrand hover:bg-green500 dark:hover:bg-[#274f33] md:inline-block"
-          >
-            {t('cta.hours')}
-          </Link>
           <button
             type="button"
             onClick={() => setMenuOpen((o) => !o)}

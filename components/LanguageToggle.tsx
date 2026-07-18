@@ -23,10 +23,10 @@ export default function LanguageToggle() {
           translate must invert to keep the knob over the active letter. */}
       <span
         aria-hidden="true"
-        className={`pointer-events-none absolute inset-y-1 left-1 w-[calc(50%-4px)] rounded-full bg-green700 transition-transform duration-200 dark:bg-deep ${
+        className={`pointer-events-none absolute inset-y-1 left-0 w-1/2 rounded-full bg-green700 transition-transform duration-200 dark:bg-deep ${
           isAr
-            ? 'translate-x-full rtl:translate-x-0 ltr:translate-x-full'
-            : 'translate-x-0 rtl:translate-x-full ltr:translate-x-0'
+            ? 'translate-x-full rtl:translate-x-0'
+            : 'translate-x-0 rtl:translate-x-full'
         }`}
       />
       <span
