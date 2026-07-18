@@ -20,13 +20,13 @@ export default function Hero() {
             <p className="mt-4 font-semibold text-accent">{t('hero.family')}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
-                href="/shop"
+                href="/hours"
                 className="rounded-lg bg-green700 dark:bg-deep px-5 py-3 font-semibold text-onBrand hover:bg-green500"
               >
-                {t('hero.actions.shop')}
+                {t('cta.hours')}
               </Link>
               <Link
-                href="/hours"
+                href="/about"
                 className="btn-ghost rounded-lg border border-gold px-5 py-3 font-semibold text-gold hover:bg-gold hover:text-deep"
               >
                 {t('hero.actions.visit')}

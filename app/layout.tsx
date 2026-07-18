@@ -3,7 +3,6 @@ import { Hanken_Grotesk, Fraunces } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { LocaleProvider } from '@/components/LocaleProvider';
-import { CartProvider } from '@/components/shop/CartContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -55,11 +54,9 @@ export default function RootLayout({
         <a href="#main" className="skip-link">Skip to content</a>
         <ThemeProvider>
           <LocaleProvider>
-            <CartProvider>
-              <Header />
-              {children}
-              <Footer />
-            </CartProvider>
+            <Header />
+            {children}
+            <Footer />
           </LocaleProvider>
         </ThemeProvider>
       </body>

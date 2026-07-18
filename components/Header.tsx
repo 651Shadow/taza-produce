@@ -5,9 +5,8 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { useLocale } from './LocaleProvider';
 import { useTheme } from './ThemeProvider';
-import CartButton from '@/components/shop/CartButton';
-import LanguageToggle from '@/components/LanguageToggle';
-import ThemeToggle from '@/components/ThemeToggle';
+import LanguageToggle from './LanguageToggle';
+import ThemeToggle from './ThemeToggle';
 
 const NAV: { href: string; key: string }[] = [
   { href: '/', key: 'nav.home' },
@@ -86,12 +85,11 @@ export default function Header() {
         <div className="ml-auto flex items-center gap-2">
           <LanguageToggle />
           <ThemeToggle />
-          <CartButton />
           <Link
-            href="/shop"
+            href="/hours"
             className="hidden rounded-md bg-green700 dark:bg-deep px-4 py-2 text-sm font-semibold text-onBrand hover:bg-green500 md:inline-block"
           >
-            {t('cta.order')}
+            {t('cta.hours')}
           </Link>
           <button
             type="button"
