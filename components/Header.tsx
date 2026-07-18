@@ -87,7 +87,7 @@ export default function Header() {
           <ThemeToggle />
           <Link
             href="/hours"
-            className="hidden rounded-md bg-green700 dark:bg-green-500 px-4 py-2 text-sm font-semibold text-onBrand hover:bg-green500 md:inline-block"
+            className="hidden rounded-md bg-green700 dark:bg-[#2f6b43] px-4 py-2 text-sm font-semibold text-onBrand hover:bg-green500 md:inline-block"
           >
             {t('cta.hours')}
           </Link>
