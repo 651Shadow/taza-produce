@@ -16,17 +16,17 @@ export default function LanguageToggle() {
       aria-label={t('nav.langSwitch')}
       title={t('nav.langSwitch')}
       onClick={() => setLocale(isAr ? 'en' : 'ar')}
-      className="relative inline-flex h-8 w-14 items-stretch overflow-hidden rounded-full border border-line bg-surface2 shadow-sm transition-colors dark:bg-[#223424] dark:shadow-none dark:ring-1 dark:ring-white/10 sm:w-[4.25rem]"
+      className="relative inline-flex h-8 w-14 items-stretch overflow-hidden rounded-full border border-line bg-surface2 p-[3px] shadow-sm transition-colors dark:bg-[#223424] dark:shadow-none dark:ring-1 dark:ring-white/10 sm:w-[4.25rem]"
     >
       {/* Sliding knob: fills one half, centered on the active label.
           The slide is direction-aware: in RTL the labels mirror, so the
           translate must invert to keep the knob over the active letter. */}
       <span
         aria-hidden="true"
-        className={`pointer-events-none absolute inset-y-1 left-0 w-1/2 rounded-full bg-green700 transition-transform duration-200 dark:bg-deep ${
+        className={`pointer-events-none absolute inset-y-[3px] left-[3px] h-[calc(2rem-6px)] w-[calc(50%-3px)] rounded-full bg-green700 transition-transform duration-200 dark:bg-deep ${
           isAr
-            ? 'translate-x-full rtl:translate-x-0'
-            : 'translate-x-0 rtl:translate-x-full'
+            ? 'translate-x-[calc(50%-3px)] rtl:translate-x-0'
+            : 'translate-x-0 rtl:translate-x-[calc(50%-3px)]'
         }`}
       />
       <span
