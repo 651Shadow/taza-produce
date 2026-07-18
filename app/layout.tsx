@@ -20,6 +20,11 @@ const display = Fraunces({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : 'http://localhost:3000',
+  ),
   title: 'Tazza Produce: Fresh Halal Grocery, Brooklyn',
   description:
     'Tazza Produce: family-owned Middle Eastern and halal grocery in Bay Ridge, Brooklyn. Fresh produce, halal meats, and warm pitas, open 24 hours.',

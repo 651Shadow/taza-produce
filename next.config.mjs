@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized: true,
+    // Optimization ON: Vercel serves resized WebP/AVIF from local /public images.
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [],
   },
   async headers() {

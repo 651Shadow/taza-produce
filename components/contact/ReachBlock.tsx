@@ -12,7 +12,7 @@ export function ReachBlock() {
   ];
   return (
     <Reveal className="rounded-xl border border-line bg-surface p-6">
-      <h3 className="mb-4 text-xl font-semibold text-text">{t('contact.reach.title')}</h3>
+      <h2 className="mb-4 text-xl font-semibold text-text">{t('contact.reach.title')}</h2>
       <dl className="space-y-3">
         {rows.map((r) => (
           <div key={r.label} className="flex flex-col gap-0.5 sm:flex-row sm:gap-2">

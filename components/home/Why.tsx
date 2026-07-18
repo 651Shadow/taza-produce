@@ -29,7 +29,7 @@ export default function Why() {
               key={f.key}
               className="flex flex-col rounded-xl border border-line bg-surface p-5"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green700 font-serif font-bold text-onBrand">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green700 dark:bg-[#2f6b43] font-serif font-bold text-onBrand">
                 {f.n}
               </span>
               <h3 className="mt-4 font-serif text-lg font-bold text-green900">

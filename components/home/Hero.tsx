@@ -21,7 +21,7 @@ export default function Hero() {
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
                 href="/hours"
-                className="rounded-lg bg-green700 dark:bg-[#2f6b43] px-5 py-3 font-semibold text-onBrand hover:bg-green500"
+                className="rounded-lg bg-green700 dark:bg-[#2f6b43] px-5 py-3 font-semibold text-onBrand hover:bg-green500 dark:hover:bg-[#274f33]"
               >
                 {t('cta.hours')}
               </Link>

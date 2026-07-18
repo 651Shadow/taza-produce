@@ -5,6 +5,7 @@ import { useT } from '@/components/LocaleProvider';
 
 // Delivery platforms. Replace the placeholder URLs with the real UberEats /
 // DoorDash store links once available. No built-in online market exists.
+// Note is only shown when a real store URL (not the platform root) is set.
 const PLATFORMS = [
   {
     key: 'shop.ubereats',
@@ -19,6 +20,9 @@ const PLATFORMS = [
     accent: 'bg-red-600',
   },
 ] as const;
+
+const isRealStoreUrl = (href: string) =>
+  !/^https:\/\/(www\.)?(ubereats|doordash)\.com\/?$/.test(href);
 
 export default function ShopPage() {
   const t = useT();
@@ -42,7 +46,9 @@ export default function ShopPage() {
               className={`flex items-center justify-between gap-4 rounded-xl border border-line bg-surface2 px-5 py-5 font-semibold text-text shadow-sm transition-colors hover:border-green700 ${p.accent} `}
             >
               <span className="text-lg">{t(p.key)}</span>
-              <span className="text-xs font-normal text-textSoft">{t(p.note)}</span>
+              {isRealStoreUrl(p.href) && (
+                <span className="text-xs font-normal text-textSoft">{t(p.note)}</span>
+              )}
             </a>
           ))}
         </div>

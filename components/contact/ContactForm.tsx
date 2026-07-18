@@ -59,16 +59,16 @@ export function ContactForm() {
 
   const fieldError = (key: keyof FieldErrors) =>
     errors[key] ? (
-      <p id={`cf-${key}-err`} className="mt-1 text-xs text-gold">
+      <p id={`cf-${key}-err`} className="mt-1 text-xs font-medium text-green900">
         {errors[key]}
       </p>
     ) : null;
 
   return (
     <Reveal className="rounded-xl border border-line bg-surface p-6">
-      <h3 className="mb-4 text-xl font-semibold text-text">{t('contact.form.title')}</h3>
+      <h2 className="mb-4 text-xl font-semibold text-text">{t('contact.form.title')}</h2>
       {formError && (
-        <p role="alert" className="mb-3 rounded-md border border-gold/40 bg-gold/10 px-3 py-2 text-sm text-gold">
+        <p role="alert" className="mb-3 rounded-md border border-gold/40 bg-gold/10 px-3 py-2 text-sm font-medium text-green900">
           {formError}
         </p>
       )}
@@ -125,7 +125,7 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={busy}
-            className="rounded-md bg-green700 dark:bg-[#2f6b43] px-4 py-2 text-sm font-semibold text-onBrand hover:bg-green500 disabled:opacity-50"
+            className="rounded-md bg-green700 dark:bg-[#2f6b43] px-4 py-2 text-sm font-semibold text-onBrand hover:bg-green500 dark:hover:bg-[#274f33] disabled:opacity-50"
           >
             {busy ? t('cta.sending') : t('cta.send')}
           </button>

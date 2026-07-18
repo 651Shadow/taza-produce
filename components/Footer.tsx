@@ -31,8 +31,8 @@ export default function Footer() {
             <h3 className="text-lg font-semibold">{t('foot.explore')}</h3>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
-                <Link href="/hours" className="opacity-90 hover:text-gold">
-                  {t('nav.hours')}
+                <Link href="/" className="opacity-90 hover:text-gold">
+                  {t('nav.home')}
                 </Link>
               </li>
               <li>
@@ -41,8 +41,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/shop" className="opacity-90 hover:text-gold">
+                  {t('nav.shop')}
+                </Link>
+              </li>
+              <li>
                 <Link href="/hours" className="opacity-90 hover:text-gold">
                   {t('nav.hours')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/gallery" className="opacity-90 hover:text-gold">
+                  {t('nav.gallery')}
                 </Link>
               </li>
               <li>
