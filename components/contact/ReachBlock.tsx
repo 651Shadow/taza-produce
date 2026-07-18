@@ -7,7 +7,6 @@ export function ReachBlock() {
   const t = useT();
   const rows: { label: string; value: string; href?: string }[] = [
     { label: t('contact.reach.phone'), value: t('contact.reach.phone.val'), href: 'tel:+17183335019' },
-    { label: t('contact.reach.email'), value: t('contact.reach.email.val'), href: 'mailto:hello@tazzaproduce.example' },
     { label: t('contact.reach.address'), value: t('contact.reach.address.val') },
     { label: t('contact.reach.hours'), value: t('contact.reach.hours.val') },
   ];

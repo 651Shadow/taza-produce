@@ -2,7 +2,6 @@
 
 // Hardcoded list of the 17 store photos that live in /public as /<numeric>.jpg
 const PHOTOS = [
-  '4997232541420948804.jpg',
   '4997232541420948805.jpg',
   '4997232541420948841.jpg',
   '4997232541420948845.jpg',
