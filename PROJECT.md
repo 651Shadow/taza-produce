@@ -1,23 +1,23 @@
-# Tazza Produce — Next.js 14 (App Router) + Tailwind v3 + TypeScript
+# Tazza Produce — Next.js 16 (App Router) + Tailwind v3 + TypeScript
 
 Logo-themed multi-page grocery site for Tazza Produce (Brooklyn NY). Ported from the v3 static mockup.
 
 ## Status
-- **Delivery ready and PUSHED** to https://github.com/651Shadow/taza-produce (public, `main`, 17 commits).
-- `npm run build` exit 0 (12 routes). Production server: all pages 200, security headers present, `llm.md` public.
-- Audited (UI/UX/security) + hardened. Not yet a live deployment (needs a host + US Stripe for live payments).
-
+- **Delivery ready and PUSHED** to https://github.com/651Shadow/taza-produce (public, `main`).
+- `npm run build` exit 0 (13 routes). Production server: all pages 200, security headers present, `llm.md` public.
+- Audited (UI/UX/security) + hardened. Live on Vercel (deployment-protection gating public/indexable; toggle in dashboard).
+- Stack: **Next.js 16 (App Router) + React 19**, TypeScript, Tailwind v3.
 
 ## Stack
-- Next.js 14 App Router, React 18, TypeScript, Tailwind v3.
+- Next.js 16 App Router, React 19, TypeScript, Tailwind v3.
 - Palette = logo only (greens `#386838`/`#389858`, gold `#E8B838`, cream `#F8F8F8`) via CSS-var tokens in `tailwind.config.ts` + `app/globals.css`.
 - Dark mode via `[data-theme="dark"]`; EN/AR via `LocaleProvider` (RTL for ar).
 
 ## Routes
-`/` `/about` `/shop` `/hours` `/gallery` `/contact` `/legal` (+ not-found)
+`/` `/about` `/shop` `/hours` `/gallery` `/contact` `/legal` (+ not-found, `/api/contact`, `/api/checkout`, `/robots.txt`, `/sitemap.xml`)
 
 ## Shared layer (`components/`)
-- `Header.tsx` — sticky 74px, nav, lang + theme toggle, cart button.
+- `Header.tsx` — sticky 74px, nav, lang + theme toggle (icons), cart + menu icons.
 - `Footer.tsx` — green band, explore/legal links.
 - `ThemeProvider.tsx` / `LocaleProvider.tsx` — context + `useTheme()` / `useT()`.
 - `Reveal.tsx` + `hooks/useReveal.ts` — bidirectional scroll reveal (reduced-motion safe).
@@ -32,8 +32,10 @@ Logo-themed multi-page grocery site for Tazza Produce (Brooklyn NY). Ported from
 - `npm install` (done; lockfile committed)
 - `npm run dev` -> http://localhost:3000
 - `npm run build` -> production build
+- `vercel deploy --prod --yes` -> deploy (CLI authed as 651shadow)
 
 ## Notes
 - `.second-brain/` — local dev scratch, gitignored.
 - `public/` — 19 assets (logo, og-image, 17 store photos).
 - `site/` — original static mockup (reference only, not part of the Next app).
+- `REPORT/` — private build/status notes, gitignored (not deployed).

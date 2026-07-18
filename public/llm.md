@@ -6,7 +6,7 @@ Last updated: 2026-07-17.
 
 ## What this is
 Tazza Produce is a family-owned Middle Eastern and halal grocery store in
-Bay Ridge, Brooklyn, New York. This site is a Next.js 14 (App Router) +
+Bay Ridge, Brooklyn, New York. This site is a Next.js 16 (App Router) +
 Tailwind CSS marketing and ordering site. It is a skills-test / portfolio
 deliverable and is not a live commercial deployment.
 
@@ -45,7 +45,7 @@ this build.)
 - Palette derived strictly from the Tazza Produce logo (greens, gold, cream)
 
 ## Tech stack
-- Framework: Next.js 14 (App Router)
+- Framework: Next.js 16 (App Router)
 - Language: TypeScript
 - Styling: Tailwind CSS v3 with semantic design tokens
 - State: React context (theme, locale, cart) with localStorage persistence
