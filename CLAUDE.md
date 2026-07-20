@@ -1,6 +1,6 @@
 # Project Brief — Taza Produce
 
-This is the **Taza Produce** website: a 24/7 Middle Eastern / halal grocery store in Bay Ridge, Brooklyn (design mockup). Next.js 16 (App Router) + React 19 + Tailwind v3 + TypeScript. Bilingual EN/AR with RTL, light + dark theme. Deployed to Vercel.
+This is the **Taza Produce** website: a 24/7 Middle Eastern / halal grocery store in Bay Ridge, Brooklyn (design mockup). Next.js 16 (App Router) + React 19 + Tailwind v3 + TypeScript. English only, light + dark theme. Deployed to Vercel.
 
 ## Project brain (READ THIS FIRST)
 A local "second brain" lives at **`.second-brain/INDEX.md`**. It is the verified source of truth for this project — stack, brand/palette, structure, data truth, images, decisions, and open items. **Read it before making changes.** It overrides any stale agent memory.

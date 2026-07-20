@@ -24,10 +24,10 @@ export default function Why() {
           <p className="mt-2 text-textSoft">{t('why.sub')}</p>
         </div>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {FEATS.map((f) => (
+          {FEATS.map((f, i) => (
             <div
               key={f.key}
-              className="flex flex-col rounded-xl border border-line bg-surface p-5"
+              className={`card-lift flex flex-col rounded-xl border border-line bg-surface p-5 fade-up delay-${i + 1}`}
             >
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green700 dark:bg-[#2f6b43] font-serif font-bold text-onBrand">
                 {f.n}

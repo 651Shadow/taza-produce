@@ -110,3 +110,89 @@
   background-color: var(--gold);
   color: var(--deep);
 }
+
+/* ============================================================
+   Tasteful, performant motion utilities (added, not replacing).
+   All keyframe animations are opt-in via classes and are fully
+   disabled under prefers-reduced-motion (see guard at bottom).
+   ============================================================ */
+
+/* Keyframes */
+@keyframes taza-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes taza-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes taza-float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+@keyframes taza-hero-zoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.05); }
+}
+
+/* Hero image: slow, gentle zoom (8s) + a barely-there float.
+   Runs once on load; paused for reduced-motion users. */
+.hero-zoom {
+  animation: taza-hero-zoom 8s ease-out forwards;
+  will-change: transform;
+}
+.hero-float {
+  animation: taza-float 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Staggered fade-up for hero text/CTA on load. */
+.fade-up {
+  opacity: 0;
+  animation: taza-fade-up .7s ease-out forwards;
+}
+.fade-in {
+  opacity: 0;
+  animation: taza-fade-in 1s ease-out forwards;
+}
+
+/* Stagger helper delays (kept small + tasteful). */
+.delay-1 { animation-delay: .12s; }
+.delay-2 { animation-delay: .24s; }
+.delay-3 { animation-delay: .36s; }
+.delay-4 { animation-delay: .48s; }
+.delay-5 { animation-delay: .60s; }
+
+/* Card hover lift + soft shadow grow (transform/opacity only). */
+.card-lift {
+  transition: transform .25s ease, box-shadow .25s ease;
+  will-change: transform;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px -12px rgba(31, 61, 31, .35);
+}
+
+/* Reduced-motion: kill every animation/transition we added and
+   force final visible state so nothing stays hidden. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-zoom,
+  .hero-float,
+  .fade-up,
+  .fade-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .card-lift {
+    transition: none !important;
+  }
+  .card-lift:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  .delay-1, .delay-2, .delay-3, .delay-4, .delay-5 {
+    animation-delay: 0s !important;
+  }
+}

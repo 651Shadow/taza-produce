@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { useLocale } from './LocaleProvider';
 import { useTheme } from './ThemeProvider';
-import LanguageToggle from './LanguageToggle';
 import ThemeToggle from './ThemeToggle';
 
 const NAV: { href: string; key: string }[] = [
@@ -20,7 +19,7 @@ const NAV: { href: string; key: string }[] = [
 
 export default function Header() {
   const pathname = usePathname();
-  const { locale, setLocale, t } = useLocale();
+  const { t } = useLocale();
   const { theme, toggle } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -83,7 +82,6 @@ export default function Header() {
 
         {/* Actions */}
         <div className="ml-auto flex items-center gap-2">
-          <LanguageToggle />
           <ThemeToggle />
           <button
             type="button"

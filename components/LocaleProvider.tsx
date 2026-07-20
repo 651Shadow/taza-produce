@@ -10,17 +10,15 @@ import {
 } from 'react';
 
 import en from '@/messages/en.json';
-import ar from '@/messages/ar.json';
 
-type Locale = 'en' | 'ar';
+type Locale = 'en';
 type Messages = Record<string, string>;
 
-const MESSAGES: Record<Locale, Messages> = { en, ar };
+const MESSAGES: Record<Locale, Messages> = { en };
 
 interface LocaleContextValue {
   locale: Locale;
   setLocale: (l: Locale) => void;
-  toggleLocale: () => void;
   t: (key: string) => string;
 }
 
@@ -35,19 +33,17 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     let initial: Locale = 'en';
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored === 'ar' || stored === 'en') initial = stored;
+      if (stored === 'en') initial = stored;
     } catch {
       /* ignore */
     }
     setLocaleState(initial);
     document.documentElement.lang = initial;
-    document.documentElement.dir = initial === 'ar' ? 'rtl' : 'ltr';
   }, []);
 
   const setLocale = useCallback((l: Locale) => {
     setLocaleState(l);
     document.documentElement.lang = l;
-    document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
     try {
       localStorage.setItem(STORAGE_KEY, l);
     } catch {
@@ -55,17 +51,13 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const toggleLocale = useCallback(() => {
-    setLocale(document.documentElement.dir === 'rtl' ? 'en' : 'ar');
-  }, [setLocale]);
-
   const t = useCallback(
     (key: string) => MESSAGES[locale][key] ?? key,
     [locale],
   );
 
   return (
-    <LocaleContext.Provider value={{ locale, setLocale, toggleLocale, t }}>
+    <LocaleContext.Provider value={{ locale, setLocale, t }}>
       {children}
     </LocaleContext.Provider>
   );

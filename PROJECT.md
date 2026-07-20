@@ -11,13 +11,13 @@ Logo-themed multi-page grocery site for Tazza Produce (Brooklyn NY). Ported from
 ## Stack
 - Next.js 16 App Router, React 19, TypeScript, Tailwind v3.
 - Palette = logo only (greens `#386838`/`#389858`, gold `#E8B838`, cream `#F8F8F8`) via CSS-var tokens in `tailwind.config.ts` + `app/globals.css`.
-- Dark mode via `[data-theme="dark"]`; EN/AR via `LocaleProvider` (RTL for ar).
+- Dark mode via `[data-theme="dark"]`; English copy via `LocaleProvider`.
 
 ## Routes
 `/` `/about` `/shop` `/hours` `/gallery` `/contact` `/legal` (+ not-found, `/api/contact`, `/api/checkout`, `/robots.txt`, `/sitemap.xml`)
 
 ## Shared layer (`components/`)
-- `Header.tsx` — sticky 74px, nav, lang + theme toggle (icons), cart + menu icons.
+- `Header.tsx` — sticky 74px, nav, theme toggle (icons), cart + menu icons.
 - `Footer.tsx` — green band, explore/legal links.
 - `ThemeProvider.tsx` / `LocaleProvider.tsx` — context + `useTheme()` / `useT()`.
 - `Reveal.tsx` + `hooks/useReveal.ts` — bidirectional scroll reveal (reduced-motion safe).

@@ -1,6 +1,6 @@
 # AGENTS.md — Taza Produce
 
-You are working in the **Taza Produce** repo (Next.js 16 App Router, React 19, Tailwind v3, TypeScript; bilingual EN/AR + RTL; light/dark). It is a design mockup for a 24/7 Middle Eastern / halal grocery in Brooklyn.
+You are working in the **Taza Produce** repo (Next.js 16 App Router, React 19, Tailwind v3, TypeScript; English only; light/dark). It is a design mockup for a 24/7 Middle Eastern / halal grocery in Brooklyn.
 
 ## Start here
 Read **`.second-brain/INDEX.md`** first. It is the project's local knowledge base (stack, brand, structure, data truth, images, decisions, open items, commands). Treat it as authoritative for Taza-specific facts and as the override for any stale memory.

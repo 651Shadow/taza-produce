@@ -1,6 +1,6 @@
 # Tazza Produce
 
-A bilingual (English / Arabic, RTL-aware) marketing website for **Tazza Produce** — a
+A marketing website for **Tazza Produce** — a
 family-owned Middle Eastern & halal grocery store in Bay Ridge, Brooklyn, open 24 hours.
 Built as a polished, accessible, production-ready front-end deliverable.
 
@@ -11,7 +11,6 @@ Built as a polished, accessible, production-ready front-end deliverable.
 ## What it is
 
 - **7 routes:** Home, About, Shop, Hours & Location, Gallery, Contact, Legal
-- **Bilingual + RTL:** full EN/AR switching with right-to-left layout for Arabic
 - **Light / dark theme** with a calm, logo-derived palette (greens, gold, cream)
 - **Responsive:** mobile-first, no horizontal overflow down to 360px
 - **Accessible:** WCAG 2.2 AA contrast, skip link, labeled forms, logical heading order
@@ -93,8 +92,8 @@ The site is public (deployment protection is off) and includes `robots.txt` + `s
 
 ```
 app/                 # routes (layout, page per route, api/contact)
-components/          # Header, LanguageToggle, ThemeToggle, home/, gallery/, contact/, hours/
-messages/            # en.json + ar.json (all UI copy)
+components/          # Header, ThemeToggle, home/, gallery/, contact/, hours/
+messages/            # en.json (all UI copy)
 public/              # images (logo + store photos), llm.md
 hooks/               # useReveal (scroll-reveal)
 lib/                 # rateLimit (in-memory API limiter)
