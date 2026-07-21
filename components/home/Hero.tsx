@@ -1,10 +1,33 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { useT } from '@/components/LocaleProvider';
+
+const IMAGES: { file: string; alt: string }[] = [
+  { file: '4997232541420948804.jpg', alt: 'Fresh produce aisle with stacked fruits and vegetables' },
+  { file: '4997232541420948851.jpg', alt: 'Display of fresh herbs and leafy greens' },
+  { file: '4997232541420948854.jpg', alt: 'Bakery and bread section' },
+  { file: '4997232541420948870.jpg', alt: 'Seasonal fruit display with price signs' },
+  { file: '4997232541420948874.jpg', alt: 'Wire shelving with canned and packaged goods' },
+  { file: '4997232541420948918.jpg', alt: 'Storefront interior with shoppers' },
+  { file: '4997232541420948919.jpg', alt: 'Checkout and deli area' },
+  { file: '4997232541420948927.jpg', alt: 'Garlic, mushrooms, and pantry containers' },
+];
+
+const SLIDE_MS = 4500;
 
 export default function Hero() {
   const t = useT();
+  const [i, setI] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setI((prev) => (prev + 1) % IMAGES.length);
+    }, SLIDE_MS);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="scroll-mt-header bg-deep text-onBrand">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
@@ -34,12 +57,18 @@ export default function Hero() {
             </div>
           </div>
           <div className="hero-float">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/4997232541420948841.jpg"
-              alt={t('hero.title')}
-              className="hero-zoom aspect-[4/3] w-full rounded-2xl border-2 border-gold object-cover"
-            />
+            <div className="relative aspect-[4/3] w-full">
+              {IMAGES.map((img, idx) => (
+                <img
+                  key={img.file}
+                  src={`/${img.file}`}
+                  alt={img.alt}
+                  className={`hero-zoom absolute inset-0 h-full w-full rounded-2xl border-2 border-gold object-cover transition-opacity duration-700 ${
+                    idx === i ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
