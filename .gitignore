@@ -25,9 +25,6 @@ Thumbs.db
 .vscode/
 .idea/
 
-# local dev scratch (second brain) — never committed
-.second-brain/
-
 # build / deps
 node_modules/
 .next/

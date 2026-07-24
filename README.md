@@ -105,7 +105,7 @@ CLAUDE.md / AGENTS.md# agent onboarding (point to .second-brain/)
 ## For developers
 
 `.second-brain/INDEX.md` is a local knowledge base (stack, brand rules, structure, data
-truth, decisions, open items). It is gitignored and lives only in the working tree — read
+truth, decisions, open items). It is committed to the repo — read
 it when extending the site. `CLAUDE.md` / `AGENTS.md` point future agents there.
 
 ## License

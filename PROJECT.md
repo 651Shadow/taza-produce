@@ -35,7 +35,7 @@ Logo-themed multi-page grocery site for Tazza Produce (Brooklyn NY). Ported from
 - `vercel deploy --prod --yes` -> deploy (CLI authed as 651shadow)
 
 ## Notes
-- `.second-brain/` — local dev scratch, gitignored.
+- `.second-brain/` — committed local knowledge base (source of truth for agents).
 - `public/` — 19 assets (logo, og-image, 17 store photos).
 - `site/` — original static mockup (reference only, not part of the Next app).
 - `REPORT/` — private build/status notes, gitignored (not deployed).
