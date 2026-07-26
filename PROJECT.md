@@ -38,4 +38,4 @@ Logo-themed multi-page grocery site for Tazza Produce (Brooklyn NY). Ported from
 - `.second-brain/` — committed local knowledge base (source of truth for agents).
 - `public/` — 19 assets (logo, og-image, 17 store photos).
 - `site/` — original static mockup (reference only, not part of the Next app).
-- `REPORT/` — private build/status notes, gitignored (not deployed).
+- `REPORT/` / `_photo_originals/` — removed from the repo to keep it lean (build/status notes + photo backups no longer committed).

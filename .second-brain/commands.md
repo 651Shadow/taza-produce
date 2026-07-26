@@ -31,6 +31,6 @@
 - Measure cast: resize to 64x64, avg RGB, R/B ratio (>1.3 = warm; ~1 = neutral).
 
 ## Notes
-- `.second-brain/` is gitignored — never commit it.
-- `public/_photo_originals/` is gitignored — local backup only.
-- `REPORT/` is gitignored — private build/status notes.
+- `.second-brain/` is committed & tracked (read + actively update it).
+- `node_modules/`, `.next/`, `.vercel/` are gitignored build caches — regenerate with `npm install` + `npm run build`.
+- `_photo_originals/` backups and `REPORT/` were removed from the repo to keep it lean (source JPGs remain on disk at `C:\Users\abdel\Desktop\taza\`).

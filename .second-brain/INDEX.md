@@ -41,7 +41,7 @@ only — not imported by the app, so it has no effect on the build or the deploy
 
 ## Images
 - Source photos: `C:\Users\abdel\Desktop\taza\` (9 JPGs 1280x1280 + Taza-Logo.jpeg).
-- Live in `public/`. Originals backup: `public/_photo_originals/` (gitignored).
+- Live in `public/`. Source JPGs on disk only at `C:\Users\abdel\Desktop\taza\` (`_photo_originals/` backups removed from repo).
 - HERO = looping SLIDESHOW over all 8 gallery images (see structure.md). 8841 is part of the gallery set now.
 - Logo: transparent PNG (converted from Taza-Logo.jpeg, bg keyed out). NEVER reintroduce a background.
 - Served optimized via next/image (next.config: unoptimized=false).

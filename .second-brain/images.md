@@ -8,7 +8,7 @@
 ## Live location
 - `public/*.jpg` — the 9 store photos (8 gallery + 8841, all used in the hero slideshow).
 - `public/taza-logo.png` — transparent logo (200x200 RGBA, built from Taza-Logo.jpeg).
-- `public/_photo_originals/` — backup of the 9 JPG sources (gitignored, local only).
+- Source JPGs live on disk only at `C:\Users\abdel\Desktop\taza\`; `_photo_originals/` backups were removed from the repo to keep it lean.
 
 ## Which photo is where
 - HERO = LOOPING SLIDESHOW over the gallery set, in `components/home/Hero.tsx` (IMAGES array):

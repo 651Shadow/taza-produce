@@ -23,4 +23,4 @@ Read **`.second-brain/INDEX.md`** first. It is the project's local knowledge bas
 - Dev: `npm run dev` (port 3000). Typecheck: `npx tsc --noEmit`. Build: `npm run build`.
 - Deploy: `vercel deploy --prod --yes`. URL rotates per deploy.
 - Branch → commit → merge to main → push → deploy. CI gate = tsc + build must pass.
-- `.second-brain/` is committed & tracked (see the "keep it current" rule above). `public/_photo_originals/` and `REPORT/` remain gitignored (local only).
+- `.second-brain/` is committed & tracked (see the "keep it current" rule above). Build caches (`node_modules/`, `.next/`, `.vercel/`) and the old `_photo_originals`/`REPORT` backups were removed to keep the repo lean.
